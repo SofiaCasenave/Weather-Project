@@ -167,17 +167,14 @@ p {
   margin: 0px 9px;
   padding: 0px 41px 0px 41px;
 }
-
 .identification {
   text-align: right;
   margin: 30px 0px 0px 0px;
   font-size: 14px;
 }
-
 .github-repo {
   color: #127fce;
 }
-
 .author {
   color: rgb(114, 111, 111);
 }
