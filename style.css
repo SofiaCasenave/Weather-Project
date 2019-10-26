@@ -80,10 +80,10 @@ p {
   font-size: 40px;
   font-weight: 600;
 }
-.fa-cloud {
-  color: #127fce;
-  font-size: 80px;
-  margin: 10px 0px 10px 63px;
+.weather-icon img {
+  height: 95px;
+  width: 95px;
+  margin: 0px 0px 0px 57px;
 }
 .weather-temperature {
   text-align: left;
@@ -108,13 +108,13 @@ p {
 }
 .weather-data ul {
   list-style-type: none;
-  margin: 20px -5px 0px 47px;
+  margin: 17px 0px 0px 70px;
   padding: 0;
   color: #127fce;
   font-size: 15px;
   line-height: 19px;
 }
-.container img {
+.illustration img {
   margin: 6px 0px 0px;
   width: 270px;
   display: inline-block;

@@ -30,6 +30,12 @@ function displayTemperature(response) {
 
   let pressure = document.querySelector("#pressure");
   pressure.innerHTML = Math.round(response.data.main.pressure);
+
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/w/${response.data.weather[0].icon}.png`
+  );
 }
 
 function getTemperature(city) {

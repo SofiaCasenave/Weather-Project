@@ -57,11 +57,13 @@
             </div>
           </div>
           <hr class="line-divider" />
-          <img
-            src="https://images.pexels.com/photos/220444/pexels-photo-220444.jpeg?cs=srgb&dl=architecture-buildings-city-220444.jpg&fm=jpg"
-            alt="Man standing on white concrete surface"
-            class="float-right"
-          />
+          <div class="illustration">
+            <img
+              src="https://images.pexels.com/photos/220444/pexels-photo-220444.jpeg?cs=srgb&dl=architecture-buildings-city-220444.jpg&fm=jpg"
+              alt="Man standing on white concrete surface"
+              class="float-right"
+            />
+          </div>
           <p>
             <span id="current-date-time"></span>
             <span id="description"></span>
@@ -82,10 +84,12 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6">
-                <i class="fas fa-cloud"></i>
+              <div class="col-md-5">
+                <div class="weather-icon">
+                  <img id="icon" />
+                </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-7">
                 <div class="weather-data">
                   <ul>
                     <li>Humidity: <span id="humidity"></span>%</li>
