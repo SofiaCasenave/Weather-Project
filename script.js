@@ -1,5 +1,3 @@
-//Challenge: Bonus point!
-
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -14,13 +12,16 @@ function getCurrentPosition() {
 let button = document.querySelector("#search-position");
 button.addEventListener("click", getCurrentPosition);
 
-//Challenge: Your task!
 function displayTemperature(response) {
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = `${Math.round(response.data.main.temp)}`;
   let city = document.querySelector("#city-name");
   city.innerHTML = response.data.name;
+
+  let description = document.querySelector("#description");
+  description.innerHTML = response.data.weather[0].description;
 }
+
 function getTemperature(city) {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=3a94f3778290bfeee61278505dbbe51d&units=metric`;
 
@@ -83,7 +84,7 @@ function updateDateTime() {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  dateContainer.innerHTML = `${day}, ${date} ${month} ${currentYear} | ${hours}:${minutes} | Cloudy`;
+  dateContainer.innerHTML = `${day}, ${date} ${month} ${currentYear} | ${hours}:${minutes} |`;
 }
 let searchForm = document.querySelector("#search-form");
 let celsiusLink = document.querySelector("#celsius");

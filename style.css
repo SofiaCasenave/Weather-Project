@@ -71,6 +71,7 @@ p {
   color: #127fce;
   display: inline-block;
   font-weight: 500;
+  text-transform: capitalize;
 }
 .city h1 {
   text-align: center;
