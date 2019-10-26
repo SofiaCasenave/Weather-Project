@@ -108,7 +108,7 @@ p {
 }
 .weather-data ul {
   list-style-type: none;
-  margin: 20px 0px 0px 50px;
+  margin: 20px -5px 0px 47px;
   padding: 0;
   color: #127fce;
   font-size: 15px;

@@ -15,11 +15,21 @@ button.addEventListener("click", getCurrentPosition);
 function displayTemperature(response) {
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = `${Math.round(response.data.main.temp)}`;
+
   let city = document.querySelector("#city-name");
   city.innerHTML = response.data.name;
 
   let description = document.querySelector("#description");
   description.innerHTML = response.data.weather[0].description;
+
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.main.humidity;
+
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = Math.round(response.data.wind.speed);
+
+  let pressure = document.querySelector("#pressure");
+  pressure.innerHTML = Math.round(response.data.main.pressure);
 }
 
 function getTemperature(city) {
