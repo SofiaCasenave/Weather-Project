@@ -81,9 +81,9 @@ p {
   font-weight: 600;
 }
 .weather-icon img {
-  height: 95px;
-  width: 95px;
-  margin: 0px 0px 0px 57px;
+  height: 120px;
+  width: 120px;
+  margin: -15px 0px 0px 45px;
 }
 .weather-temperature {
   text-align: left;
@@ -99,12 +99,16 @@ p {
   position: relative;
   top: -16px;
 }
-.active {
+.weather-temperature .active {
   color: #127fce;
   font-weight: 900;
   font-size: 17px;
   position: relative;
   top: 0px;
+  cursor: default;
+}
+.weather-temperature .active:hover {
+  text-decoration: none;
 }
 .weather-data ul {
   list-style-type: none;

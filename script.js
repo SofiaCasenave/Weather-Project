@@ -13,8 +13,10 @@ let button = document.querySelector("#search-position");
 button.addEventListener("click", getCurrentPosition);
 
 function displayTemperature(response) {
+  celsiusTemperature = response.data.main.temp;
+
   let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = `${Math.round(response.data.main.temp)}`;
+  temperature.innerHTML = Math.round(celsiusTemperature);
 
   let city = document.querySelector("#city-name");
   city.innerHTML = response.data.name;
@@ -29,15 +31,14 @@ function displayTemperature(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
 
   let pressure = document.querySelector("#pressure");
-  pressure.innerHTML = Math.round(response.data.main.pressure);
+  pressure.innerHTML = response.data.main.pressure;
 
   let icon = document.querySelector("#icon");
   icon.setAttribute(
     "src",
-    `http://openweathermap.org/img/w/${response.data.weather[0].icon}.png`
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
-
 function getTemperature(city) {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=3a94f3778290bfeee61278505dbbe51d&units=metric`;
 
@@ -48,21 +49,20 @@ function search(event) {
   let searchInput = document.querySelector("#search-input");
   getTemperature(searchInput.value);
 }
-function convertToCelsius() {
+function convertToFahrenheit(event) {
+  event.preventDefault();
   let temperature = document.querySelector("#temperature");
-  let link = document.querySelector("#celsius");
-  link.classList.add("active");
-  let fahrenheitLink = document.querySelector("#fahrenheit");
-  fahrenheitLink.classList.remove("active");
-  temperature.innerHTML = 25;
-}
-function convertToFahrenheit(response) {
-  let temperature = document.querySelector("#temperature");
-  let link = document.querySelector("#fahrenheit");
-  link.classList.add("active");
-  let celsiusLink = document.querySelector("#celsius");
   celsiusLink.classList.remove("active");
-  temperature.innerHTML = Math.round((25 * 9) / 5 + 32);
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahrenheitTemperature);
+}
+function convertToCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
 }
 function updateDateTime() {
   let dateContainer = document.querySelector("#current-date-time");
@@ -102,14 +102,18 @@ function updateDateTime() {
   }
   dateContainer.innerHTML = `${day}, ${date} ${month} ${currentYear} | ${hours}:${minutes} |`;
 }
-let searchForm = document.querySelector("#search-form");
-let celsiusLink = document.querySelector("#celsius");
-let fahrenheitLink = document.querySelector("#fahrenheit");
 
+let celsiusTemperature = null;
+
+let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
-celsiusLink.addEventListener("click", convertToCelsius);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
-convertToCelsius();
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", convertToCelsius);
+
 updateDateTime();
+
 getTemperature("Lisbon");
