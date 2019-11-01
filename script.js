@@ -6,11 +6,10 @@ function showPosition(position) {
 
   axios.get(url).then(displayTemperature);
 
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=3a94f3778290bfeee61278505dbbe51d&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&APPID=3a94f3778290bfeee61278505dbbe51d&units=metric`;
 
   axios.get(apiUrl).then(displayForecast);
 }
-
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
@@ -212,7 +211,6 @@ function updateDateTime() {
   }
   dateContainer.innerHTML = `${day}, ${date} ${month} ${currentYear} | ${hours}:${minutes} |`;
 }
-
 let celsiusTemperature = null;
 
 let searchForm = document.querySelector("#search-form");
