@@ -20,17 +20,18 @@ body {
 }
 input {
   text-align: left;
-  margin: 0px;
+  margin: 0px 0px 0px 0px;
   border: 2px solid #939aa9;
   color: #127fce;
   background: rgb(218, 216, 216);
   opacity: 1;
   border-radius: 3px;
-  width: 280px;
+  width: 301px;
 }
 button {
   text-align: center;
-  vertical-align: center;
+  margin: 0px;
+  padding: 1px 10px 1px 10px;
   background: transparent;
   border: 2px solid #939aa9;
   border-radius: 3px;
@@ -45,10 +46,10 @@ button {
 }
 .app-name {
   text-align: center;
-  margin: 0px;
+  margin: 0px 0px 0px -12px;
   color: #127fce;
-  font-size: 26px;
-  padding: 0px 15px;
+  font-size: 22px;
+  padding: 0px 20px;
   border: 2px solid #127fce;
   border-radius: 5px;
   background: rgb(199, 198, 198);
@@ -57,10 +58,11 @@ h1,
 h3 {
   color: #127fce;
 }
-a {
+.cities a {
   color: #127fce;
+  font-size: 15px;
   font-weight: 550;
-  margin: 0px;
+  margin: 4px 10px 0px 0px;
   text-align: center;
 }
 .line-divider {
@@ -69,6 +71,7 @@ a {
 }
 p {
   color: #127fce;
+  font-size: 15px;
   display: inline-block;
   font-weight: 500;
   text-transform: capitalize;
@@ -112,21 +115,21 @@ p {
 }
 .weather-data ul {
   list-style-type: none;
-  margin: 17px 0px 0px 70px;
-  padding: 0;
+  margin: 17px 0px 0px 42px;
+  padding: 0px;
   color: #127fce;
   font-size: 15px;
   line-height: 19px;
 }
 .illustration img {
-  margin: 8px 0px 0px 0px;
-  width: 270px;
+  margin: 6px 0px 0px 0px;
+  width: 283px;
   display: inline-block;
   border: 2px solid #127fce;
   border-radius: 5px;
 }
 .weather-forecast {
-  margin-top: 10px;
+  margin-top: 8px;
 }
 .weather-forecast h3 {
   color: #127fce;
@@ -143,12 +146,13 @@ p {
 }
 .weather-forecast img {
   display: block;
-  margin: 7px auto;
-  height: 85px;
-  width: 85px;
+  margin: 5px auto;
+  height: 80px;
+  width: 80px;
 }
 .weather-forecast-temperature {
   color: #127fce;
+  line-height: 8px;
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -156,7 +160,7 @@ p {
 }
 .identification {
   text-align: right;
-  margin: 20px 0px 0px 0px;
+  margin: 40px 0px 0px 0px;
   font-size: 14px;
 }
 .github-repo {
