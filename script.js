@@ -1,18 +1,23 @@
-function showPosition(position) {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-
+function getLocalTemp(lat, lon) {
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=3a94f3778290bfeee61278505dbbe51d&units=metric`;
 
   axios.get(url).then(displayTemperature);
 
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=3a94f3778290bfeee61278505dbbe51d&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&APPID=3a94f3778290bfeee61278505dbbe51d&units=metric`;
 
   axios.get(apiUrl).then(displayForecast);
 }
-
-function getCurrentPosition() {
+function showPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  getLocalTemp(latitude, longitude);
+}
+function getCurrentGps() {
   navigator.geolocation.getCurrentPosition(showPosition);
+}
+function getCurrentPosition(event) {
+  event.preventDefault();
+  getCurrentGps();
 }
 let button = document.querySelector("#search-position");
 button.addEventListener("click", getCurrentPosition);
