@@ -88,6 +88,9 @@ p {
   width: 120px;
   margin: -15px 0px 0px 45px;
 }
+a {
+  color: #127fce;
+}
 .weather-temperature {
   text-align: left;
   color: #127fce;
